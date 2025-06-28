@@ -1,0 +1,29 @@
+%btn{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 3px;
+    color: black;
+    font-weight: bold;
+
+    background-color: azure;
+
+    &:hover{
+        transform: scale(0.98);
+    }
+}
+
+.btn-primary{
+    @extend %btn;
+    // background-color: lighten($primary-color,20%);
+
+    @include set-backgroud(lighten($primary-color, 20%))
+}
+
+.btn-secondary {
+    @extend %btn;
+    // color:;
+    // background-color: darken($secondary-color, 20%);
+
+    @include set-backgroud(darken($secondary-color, 20%));
+}

@@ -1,9 +1,6 @@
-$light-color:#f4f4f4;
-$font-stack:Arial,
-Helvetica,
-sans-serif;
-$primary-color:#0e6cff;
-$secondary-color:#ff8700;
+@import 'config';
+@import 'utility';
+@import 'buttons';
 
 *{
     box-sizing: border-box;
@@ -17,8 +14,66 @@ body{
     line-height:1.6;
 }
 
-.showcase{
-    background-color:$primary-color ;
-    color: $light-color;
-    height: 600px;
+img{
+    width: 100%;
 }
+
+
+.showcase{
+    @include set-backgroud($primary-color);
+
+    // background-color:$primary-color ;
+    // color: set-text-color($primary-color);
+    height: fit-content;
+    padding: 2rem;
+
+    a {
+        text-decoration: none;   }
+
+    nav{
+        display: flex;
+        // flex-direction: row;
+        // place-items: center;
+        align-items: center;
+        justify-content: space-between;
+
+       ul{
+        display: flex;
+        list-style-type: none;
+        // gap: 1rem;
+
+
+        li{
+            padding: 1rem;
+        }
+
+        a:hover{
+            color: $secondary-color;
+        }
+       }
+    }
+
+    &-content{
+        height: 100%;
+        display: flex;
+        place-items: center;
+        gap: 1rem;
+
+        img{
+            width: 40%;
+            border-radius: 1rem;
+        }
+
+        h1{
+            font-size: 50px;
+            line-height: 1.2;
+        }
+
+        // p{
+        //     margin: 20px 0;
+        // }
+
+    }
+}
+
+@import 'mobile'
